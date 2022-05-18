@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from './components/body/body.component';
 import { PnfComponent } from './components/pnf/pnf.component';
 
@@ -14,7 +15,8 @@ import { PnfComponent } from './components/pnf/pnf.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
