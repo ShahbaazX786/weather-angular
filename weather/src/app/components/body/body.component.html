@@ -1,4 +1,63 @@
-<div class="container">
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()"><span id="txt">Location</span>
+    <input type="text" placeholder="search a city or place..." id="search1" name="city" [(ngModel)]="cityname">
+  </form>
+</div>
+
+<div class="container" *ngIf="weatherDataa">
+
+  <div class="upper-data">
+    <img src="../../../assets/day.png" *ngIf="weatherDataa.main.temp>=15">
+    <img src="../../../assets/night.png" *ngIf="weatherDataa.main.temp<15">
+    <div class="weather-data">
+      <div class="location">{{weatherDataa.name}}</div>
+      <div class="temperature">{{weatherDataa.main.temp | number:'1.0-0'}}°C</div>
+    </div>
+  </div>
+
+  <div class="lower-data">
+    <div class="more-info-label">
+      More-info
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../../../assets/cool-thermo.png">
+          <span>min</span>
+        </div>
+        <div class="info-block-value">{{weatherDataa.main.temp_min}}°C</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../../../assets/hot-thermo.png">
+          <span>max</span>
+        </div>
+        <div class="info-block-value">{{weatherDataa.main.temp_max}}°C</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../../../assets/humidity.png">
+          <span>Humidity</span>
+        </div>
+        <div class="info-block-value">{{weatherDataa.main.humidity}}%</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../../../assets/wind.png">
+          <span>Wind</span>
+        </div>
+        <div class="info-block-value">{{weatherDataa.wind.speed}}Km/h</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--
+  <div class="container">
 
   <div class="upper-data">
     <img src="../../../assets/day.png" *ngIf="temp>=15">
@@ -49,3 +108,5 @@
   </div>
 
 </div>
+-->
+<!--static UI -->
